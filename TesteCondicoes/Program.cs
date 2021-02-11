@@ -8,28 +8,45 @@ namespace TesteCondicoes
 
         static string[] arrDiasSemana = new string[] { "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabado", "Domingo" };
 
+        //variavel global - toda a classe enxerga
         static int[] arrayWhile = new int[] { 1, 2, 3, 4, 5 };
         static void Main(string[] args)
         {
             //comentario por linha
-            /*comentário por código*/
+            /*comentário por trecho do código*/
 
+            /*
+             * Para depurar/debugar linha do código:
+             * F10 - linha a linha
+             * F11- para entrar dentro do método
+             * ctrl + k + d - para identar o código
+             */
 
+           
             //1 - Teste IF-ELSE
             string strValorDiaDaSemana = Console.ReadLine();
 
             int intValorUsuarioConvertido = Convert.ToInt32(strValorDiaDaSemana);
-            showCondition((DiaUteisSemana)intValorUsuarioConvertido);
+            DiaUteisSemana diaSemana = (DiaUteisSemana)intValorUsuarioConvertido;
+
+            string retornoIF = ExemploIF(diaSemana);
             //Fim do teste IF- ELSE
 
+            Console.WriteLine("IF: " + retornoIF);
             Console.WriteLine("----------------------------------");
             Console.WriteLine(" ");
 
 
             //  2 - Teste Switch Case no C#
+            
             string strValorDiaDaSemana1 = Console.ReadLine();
             int intValorUsuarioConvertido1 = Convert.ToInt32(strValorDiaDaSemana1);
-            showSwitchCase((DiaUteisSemana)intValorUsuarioConvertido1);
+
+            DiaUteisSemana exemploSwitch1 = (DiaUteisSemana)intValorUsuarioConvertido1;
+
+            string retornoSwitch1 = showSwitchCase(exemploSwitch1);
+
+            Console.WriteLine("Switch/Case: " + retornoSwitch1);
             //FIM Teste Switch Case no C#
             Console.WriteLine("----------------------------------");
             Console.WriteLine(" ");
@@ -43,7 +60,7 @@ namespace TesteCondicoes
             clsDia.DiaSemanaProperty = (DiaUteisSemana)intValorUsuarioConvertido21;
             decimal retornoD = switchCaseClasse(clsDia, 50);
 
-            Console.WriteLine(retornoD);
+            Console.WriteLine("Exemplo 1 - C# 8. 0 : " + retornoD);
 
             //switchCaseClasse - switch case com parametro de classe
             Console.WriteLine("----------------------------------");
@@ -54,7 +71,7 @@ namespace TesteCondicoes
             int intValorDigitadoConvertido = Convert.ToInt32(strValorDigitadoPeloUsuario);
             DiaUteisSemana diaUtil = (DiaUteisSemana)intValorDigitadoConvertido;
             string retorno = SwitchCase2(diaUtil);
-            Console.WriteLine(retorno);
+            Console.WriteLine("SwitchCase2: " + retorno);
 
             //FIM SwitchCase2 - uma das formar de implementar condicoes switch case no C#
             Console.WriteLine("----------------------------------");
@@ -79,7 +96,7 @@ namespace TesteCondicoes
 
             string retornoStr = RetornarDiasDeAula(diaSemana1, diaSemana2);
 
-            Console.WriteLine(retornoStr);
+            Console.WriteLine("Switch Case com duas condicoes: " + retornoStr);
 
 
             // FIM Switch case Com duas condições RetornarDiasDeAula
@@ -109,12 +126,12 @@ namespace TesteCondicoes
 
             string retornoStr1 = GetDiasUteis(objDiaSemana);
 
-            Console.WriteLine(retornoStr1);
+            Console.WriteLine("Switch case com mais de uma opcao, com propriedades de classe : " + retornoStr1);
 
 
             //Fim Switch case com mais de uma opcao, com propriedades de classe
 
-            /* comentario em bloco*/
+  
             Console.WriteLine("----------------------------------");
             Console.WriteLine(" ");
 
@@ -130,19 +147,19 @@ namespace TesteCondicoes
             Console.WriteLine("----------------------------------");
             Console.WriteLine(" ");
 
-
-            TesteBreak();
+            
+             TesteBreak();
             Console.WriteLine("----------------------------------");
             Console.WriteLine(" ");
-
-            PercorreDOWhile();
+            
+             PercorreDOWhile();
             Console.WriteLine("----------------------------------");
             Console.WriteLine(" ");
-
-            PercorreWhile();
+            
+          PercorreWhile();
             Console.WriteLine("----------------------------------");
             Console.WriteLine(" ");
-
+          
             Console.ReadLine();
         }
 
@@ -390,7 +407,7 @@ namespace TesteCondicoes
         /// </summary>
         /// <param name="dia"></param>
         /// <returns></returns>
-        static string showCondition(DiaUteisSemana dia)
+        static string ExemploIF(DiaUteisSemana dia)
         {
             if (dia == DiaUteisSemana.Segunda)
             {
